@@ -123,7 +123,7 @@ export const projects: Project[] = [
     flow: ["Lead form", "Contacts", "Companies", "Deals pipeline", "Dashboard"],
     mock: "pipeline",
     color: "#ff8a5c",
-    image: "/portfolio/hubspot/slide-01.webp",
+    image: "/portfolio/hubspot/slide-07.webp",
     imageRatio: "16 / 9",
     imageBg: "#f4ecda", // the cream of the deck's cover slide
     gallery: [
@@ -131,7 +131,6 @@ export const projects: Project[] = [
       { src: "/portfolio/hubspot/slide-04.webp", label: "Contacts and lifecycle stages" },
       { src: "/portfolio/hubspot/slide-05.webp", label: "Company database" },
       { src: "/portfolio/hubspot/slide-06.webp", label: "Sales pipeline" },
-      { src: "/portfolio/hubspot/slide-07.webp", label: "Reporting dashboard" },
     ],
   },
   {

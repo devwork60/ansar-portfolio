@@ -49,11 +49,11 @@ export function Hero() {
 
   return (
     <section ref={ref} id="top" className="relative mx-auto max-w-[1240px] px-5 pb-6 pt-28 sm:px-8 lg:pt-32">
-      <div className="relative flex flex-col lg:block lg:h-[640px]">
+      <div className="relative flex flex-col xl:block xl:h-[640px]">
         {/* arch portrait */}
         <motion.div
           style={{ y: archY }}
-          className="relative order-2 mx-auto mt-10 h-[440px] w-[min(86vw,360px)] lg:absolute lg:left-[42%] lg:top-0 lg:mt-0 lg:h-[600px] lg:w-[30%]"
+          className="relative order-2 mx-auto mt-10 h-[440px] w-[min(86vw,360px)] xl:absolute xl:left-[50%] xl:top-0 xl:mt-0 xl:h-[600px] xl:w-[30%]"
         >
           <motion.div
             initial={{ clipPath: "inset(45% 0% 0% 0%)", opacity: 0 }}
@@ -69,7 +69,7 @@ export function Hero() {
                   src={profile.photo}
                   alt={profile.name}
                   draggable={false}
-                  className="absolute bottom-0 left-1/2 w-[125%] max-w-none -translate-x-1/2 select-none lg:h-[86%] lg:w-auto"
+                  className="absolute bottom-0 left-1/2 w-[125%] max-w-none -translate-x-1/2 select-none xl:h-[86%] xl:w-auto"
                 />
               </div>
             ) : (
@@ -79,11 +79,11 @@ export function Hero() {
         </motion.div>
 
         {/* left: name + intro */}
-        <motion.div style={{ y: textY }} className="relative z-10 order-1 lg:absolute lg:left-0 lg:top-6 lg:w-[52%]">
+        <motion.div style={{ y: textY }} className="relative z-10 order-1 xl:absolute xl:left-0 xl:top-6 xl:w-[43%]">
           <Reveal y={14} delay={0.1}>
             <p className="text-2xl italic">Hey, I&rsquo;m {profile.short},</p>
           </Reveal>
-          <h1 className="mt-3 font-display text-[clamp(3.8rem,8.4vw,6.8rem)] leading-[0.86] tracking-[0.005em]">
+          <h1 className="mt-3 font-display text-[clamp(3.8rem,8.4vw,6.8rem)] leading-[0.86] tracking-[0.005em] xl:text-[clamp(3.8rem,4.6vw,4.1rem)]">
             <Rise text="A CRM" immediate delay={0.2} />
             <br />
             <Rise text="& Automation" immediate delay={0.32} italic={["Automation"]} />
@@ -101,7 +101,7 @@ export function Hero() {
         </motion.div>
 
         {/* right: stats */}
-        <ul className="relative z-10 order-3 mt-10 grid grid-cols-2 gap-y-6 lg:absolute lg:right-0 lg:top-24 lg:mt-0 lg:block lg:space-y-9 lg:text-right">
+        <ul className="relative z-10 order-3 mt-10 grid grid-cols-2 gap-y-6 xl:absolute xl:right-0 xl:top-24 xl:mt-0 xl:block xl:space-y-9 xl:text-right">
           {stats.map((s, i) => (
             <motion.li
               key={s.label}

@@ -54,19 +54,30 @@ export function Nav() {
             <span className="h-3 w-3 rounded-full bg-ink" />
             {profile.name.toUpperCase()}
           </Link>
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-controls="site-menu"
-            onClick={() => setOpen((v) => !v)}
-            className="group flex items-center gap-3 rounded-full bg-ink py-2.5 pl-6 pr-4 font-display text-lg tracking-wide text-paper transition-colors duration-300 hover:bg-acc"
-          >
-            {open ? "CLOSE" : "MENU"}
-            <span className="relative block h-3 w-5" aria-hidden>
-              <span className={`absolute left-0 h-[1.5px] w-5 bg-paper transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
-              <span className={`absolute left-0 h-[1.5px] w-5 bg-paper transition-all duration-300 ${open ? "top-1.5 -rotate-45" : "top-3 group-hover:w-3"}`} />
-            </span>
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href={profile.hire}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-ink/25 px-4 py-2.5 font-display text-lg tracking-wide transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-paper sm:px-5"
+            >
+              <span className="sm:hidden">HIRE</span>
+              <span className="hidden sm:inline">HIRE ME</span>
+            </a>
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls="site-menu"
+              onClick={() => setOpen((v) => !v)}
+              className="group flex items-center gap-3 rounded-full bg-ink py-2.5 pl-5 pr-4 font-display text-lg tracking-wide text-paper transition-colors duration-300 hover:bg-acc sm:pl-6"
+            >
+              {open ? "CLOSE" : "MENU"}
+              <span className="relative block h-3 w-5" aria-hidden>
+                <span className={`absolute left-0 h-[1.5px] w-5 bg-paper transition-all duration-300 ${open ? "top-1.5 rotate-45" : "top-0"}`} />
+                <span className={`absolute left-0 h-[1.5px] w-5 bg-paper transition-all duration-300 ${open ? "top-1.5 -rotate-45" : "top-3 group-hover:w-3"}`} />
+              </span>
+            </button>
+          </div>
         </div>
       </motion.header>
 
