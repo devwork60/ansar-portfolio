@@ -11,21 +11,8 @@ export function Nav() {
   const pathname = usePathname();
   const home = pathname === "/";
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.3 });
-
-  // hide the bar while scrolling down, bring it back on scroll up
-  useEffect(() => {
-    let last = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      setHidden(y > last && y > 360 && !open);
-      last = y;
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -45,9 +32,9 @@ export function Nav() {
       <motion.div className="fixed left-0 top-0 z-[70] h-[2px] w-full origin-left bg-ink" style={{ scaleX }} />
       <motion.header
         initial={{ y: -40, opacity: 0 }}
-        animate={{ y: hidden ? -100 : 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease, delay: hidden ? 0 : 0.1 }}
-        className="fixed inset-x-0 top-0 z-[65]"
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease, delay: 0.1 }}
+        className="sticky inset-x-0 top-0 z-[65] border-b border-ink/10 bg-paper/75 backdrop-blur-md supports-[backdrop-filter]:bg-paper/65"
       >
         <div className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-5 sm:px-8">
           <Link href="/" className="flex items-center gap-3 font-display text-2xl tracking-wide" aria-label={`${profile.name} home`}>
